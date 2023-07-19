@@ -75,11 +75,12 @@
           /* Style for input boxes */
   input[type="text"],
   input[type="email"],
+  input[type="tel"],
   textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
     margin-bottom: 10px;
     font-size: 16px;
@@ -109,6 +110,8 @@
               <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
               <label for="email-address">Email Address</label>
               <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+              <label for="mobile-number">Mobile Number</label>
+              <input type="tel" name="mobile_number" id="mobile-number" placeholder="Enter your mobile number" required="">
               <fieldset id="fs-frm-selects">
                 <label for="timely">1. Interview Content:</label>
                 <input type="text" name="interview_content" id="timely" placeholder="Enter your response here" required="">
@@ -120,7 +123,7 @@
                 <input type="text" name="qualifications_experience" id="qualifications" placeholder="Enter your response here" required="">
               </fieldset>
               <label for="message">5. Overall Impressions</label>
-              <textarea rows="3" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor." required=""></textarea>
+              <textarea rows="3" name="message" id="message" placeholder="Add any other comments here..." required=""></textarea>
               <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
             </fieldset>
             <input type="submit" value="Send Responses">
