@@ -86,7 +86,7 @@
 
 <body>
     <header>
-        <h1>Feedback Collection</h1>
+        <h1>Feedback Form</h1>
     </header>
 
     <section class="personal-info-section">
@@ -106,16 +106,31 @@
         <h2>Questionnaire</h2>
         <form id="fs-frm-questionnaire" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/xknlgjok" method="post">
             <fieldset id="fs-frm-inputs">
-                <label for="timely">1. Interview Content:</label>
+                <label for="timely">1. Interview Content: </label>
+                <p>I would like to know if my responses adequately addressed the questions asked during the interview. 
+                    Were there any particular areas where my answers could have been more comprehensive or better aligned 
+                    with the requirements of the role?</p>
                 <input type="text" name="interview_content" id="timely" placeholder="Enter your response here" required="">
                 <label for="quality">2. Technical Skills:</label>
+                <p>Did my technical skills and knowledge meet the expectations for the Risk Data Analyst position? 
+                    Were there any specific areas where I could benefit from further development?</p>
                 <input type="text" name="technical_skills" id="quality" placeholder="Enter your response here" required="">
+                <p></p>
                 <label for="communication">3. Communication and Presentation:</label>
+                <p>I acknowledge that my German language proficiency is currently limited to reading and hearing. 
+                    I am actively working on improving my language skills to become more proficient in verbal communication. 
+                    However, I would greatly appreciate your insights on other aspects where I might have lacked in the 
+                    interview process. Any guidance or feedback you could provide would be of immense help in my journey 
+                    of professional growth.</p>
                 <input type="text" name="communication_presentation" id="communication" placeholder="Enter your response here" required="">
                 <label for="qualifications">4. Qualifications and Experience:</label>
+                <p>In light of the qualifications and experience required for the position, were there any gaps or areas 
+                    where I could enhance my profile to become a stronger candidate?</p>
                 <input type="text" name="qualifications_experience" id="qualifications" placeholder="Enter your response here" required="">
             </fieldset>
             <label for="message">5. Overall Impressions</label>
+            <p>Any general observations or insights you have about my interview performance that you believe would be 
+                beneficial for my professional growth would be highly appreciated.</p>
             <textarea rows="3" name="message" id="message" placeholder="Add any other comments here..." required=""></textarea>
             <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
             <input type="button" value="Previous" onclick="showPersonalInfoSection()">
