@@ -93,18 +93,18 @@
 
     <section class="personal-info-section">
         <h2>Personal Information</h2>
-        <form id="fs-frm-personal-info" name="personal-info-form" accept-charset="utf-8">
+        <form id="fs-frm-personal-info" name="personal-info-form" accept-charset="utf-8" action="https://formspree.io/f/xknlgjok" method="post">
             <label for="full-name">Full Name</label>
             <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
             <label for="email-address">Email Address</label>
-            <input type="email" name="email" id="email-address" placeholder="email@domain.tld" required="">
+            <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
             <label for="mobile-number">Mobile Number</label>
             <input type="tel" name="mobile_number" id="mobile-number" placeholder="Enter your mobile number" required="">
-            <input type="button" value="Next" onclick="showQuestionnaireSection()">
+            <input type="submit" value="Next">
         </form>
     </section>
 
-    <section class="questionnaire-section" style="display: none;">
+    <section class="questionnaire-section">
         <h2>Questionnaire</h2>
         <form id="fs-frm-questionnaire" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/xknlgjok" method="post">
             <fieldset id="fs-frm-inputs">
@@ -120,25 +120,14 @@
             <label for="message">5. Overall Impressions</label>
             <textarea rows="3" name="message" id="message" placeholder="Add any other comments here..." required=""></textarea>
             <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
-            <input type="button" value="Previous" onclick="showPersonalInfoSection()">
             <input type="submit" value="Send Responses">
         </form>
     </section>
 
     <script>
-        function showQuestionnaireSection() {
-            document.querySelector(".personal-info-section").style.display = "none";
-            document.querySelector(".questionnaire-section").style.display = "block";
-        }
-
-        function showPersonalInfoSection() {
-            document.querySelector(".questionnaire-section").style.display = "none";
-            document.querySelector(".personal-info-section").style.display = "block";
-        }
-
         document.getElementById("fs-frm-questionnaire").addEventListener("submit", function (event) {
             event.preventDefault();
-            // Retrieve form data and handle submission here
+            // Retrieve form data
             const name = document.getElementById("full-name").value;
             const email = document.getElementById("email-address").value;
             const phone = document.getElementById("mobile-number").value;
@@ -148,7 +137,7 @@
             const qualificationsExperience = document.getElementById("qualifications").value;
             const overallImpressions = document.getElementById("message").value;
 
-            // Implement your code to send the data to a server or handle it in any other way you prefer.
+            // Here, you can implement your code to send the data to a server or handle it in any other way you prefer.
             // For this example, we'll log the data to the console.
             console.log({
                 name,
