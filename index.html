@@ -105,26 +105,6 @@
             <input type="submit" value="Send Responses">
           </form>
     </section>
-    <section>
-        <form id="feedbackForm" action="https://formspree.io/f/xknlgjok" method="POST">
-            <label for="interviewContent">1. Interview Content:</label>
-            <textarea id="interviewContent" name="interviewContent" rows="4" required></textarea>
-
-            <label for="technicalSkills">2. Technical Skills:</label>
-            <textarea id="technicalSkills" name="technicalSkills" rows="4" required></textarea>
-
-            <label for="communicationPresentation">3. Communication and Presentation:</label>
-            <textarea id="communicationPresentation" name="communicationPresentation" rows="4" required></textarea>
-
-            <label for="qualificationsExperience">4. Qualifications and Experience:</label>
-            <textarea id="qualificationsExperience" name="qualificationsExperience" rows="4" required></textarea>
-
-            <label for="overallImpressions">5. Overall Impressions:</label>
-            <textarea id="overallImpressions" name="overallImpressions" rows="4" required></textarea>
-
-            <input type="submit" value="Submit Feedback">
-        </form>
-    </section>
     <script>
         document.getElementById("feedbackForm").addEventListener("submit", function (event) {
             event.preventDefault();
