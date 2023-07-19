@@ -14,7 +14,22 @@
       background-position: center;
       background-attachment: fixed;
     }
+
+    /* Set the maximum width for the main content area */
+    main {
+      margin: 0 auto; /* Center the content horizontally within the main area */
+      padding: 20px; /* Optional padding to create spacing between content and edges */
+    }
     
+    header {
+      background-color: #0ebdd4;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 25px;
+      margin-bottom: 20px;  
+    }
+
     .basic-info-box {
       max-width: 800px;
       margin: 0 auto;
@@ -28,15 +43,16 @@
       margin: 0 auto;
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 60px; /* Adjust this value to set the space between the form and footer */
     }
 
     .basic-info-box h2,
     .interview-questions-box h2 {
       text-align: center;
       margin-bottom: 20px;
-      background-color: #007bff;
-      color: #fff;
+      color: #0e7d8b;
       padding: 10px;
+      font-size: 30px
     }
 
     .basic-info-box form,
@@ -59,11 +75,12 @@
     .basic-info-box button,
     .interview-questions-box button {
       padding: 10px 20px;
-      background-color: #007bff;
+      background-color: #0cabdc;
       color: #fff;
       border: none;
       cursor: pointer;
-      width: 120px;
+      width: 200px;
+      font-size: 18px
     }
 
     .basic-info-box button:hover,
@@ -71,19 +88,26 @@
       background-color: #0056b3;
     }
 
-    /* Add the following CSS for the title */
-    h1 {
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background-color: #007bff;
-      color: #fff;
+    footer {
+      background-color: transparent;
       padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      color: #fff;
+      font-weight: bold;
     }
+
+      footer p {
+          margin: 0;
+      }
   </style>
 </head>
-
-<body>
+<main>
+    <header>
+      <h1>Feedback Form</h1>
+    </header>
     <div class="basic-info-box">
       <h2>Basic Information</h2>
       <form action="https://formspree.io/f/xknlgjok" method="POST">
@@ -134,5 +158,9 @@
         <button type="submit">Submit Feedback</button>
       </form>
     </div>
-  </body>
+  </main>
+  <footer>
+      <p>&copy; 2023 Arun Kumar Pandey. All rights reserved.</p>
+  </footer>
+  
   </html>
