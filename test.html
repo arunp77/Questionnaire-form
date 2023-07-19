@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Response</title>
+    <style>
+        /* (The styles remain the same) */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Feedback Collection</h1>
+    </header>
+    <section class="personal-info">
+        <form id="personalInfoForm">
+            <!-- (The personal info section remains the same) -->
+        </form>
+    </section>
+    <section>
+        <form id="feedbackForm" action="https://formspree.io/f/xknlgjok" method="POST">
+            <label for="interviewContent">1. Interview Content:</label>
+            <textarea id="interviewContent" name="interviewContent" rows="4" required></textarea>
+
+            <label for="technicalSkills">2. Technical Skills:</label>
+            <textarea id="technicalSkills" name="technicalSkills" rows="4" required></textarea>
+
+            <label for="communicationPresentation">3. Communication and Presentation:</label>
+            <textarea id="communicationPresentation" name="communicationPresentation" rows="4" required></textarea>
+
+            <label for="qualificationsExperience">4. Qualifications and Experience:</label>
+            <textarea id="qualificationsExperience" name="qualificationsExperience" rows="4" required></textarea>
+
+            <label for="overallImpressions">5. Overall Impressions:</label>
+            <textarea id="overallImpressions" name="overallImpressions" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Feedback">
+        </form>
+    </section>
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Retrieve form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const interviewContent = document.getElementById("interviewContent").value;
+            const technicalSkills = document.getElementById("technicalSkills").value;
+            const communicationPresentation = document.getElementById("communicationPresentation").value;
+            const qualificationsExperience = document.getElementById("qualificationsExperience").value;
+            const overallImpressions = document.getElementById("overallImpressions").value;
+
+            // Send the form data to Formspree
+            const form = event.target;
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json"
+                },
+                body: formData
+            }).then(response => {
+                // Handle the response (you can show a confirmation message here)
+                form.reset();
+                alert("Thank you for your feedback!");
+            }).catch(error => {
+                // Handle any errors that occurred during form submission
+                console.error("Error submitting form:", error);
+            });
+        });
+    </script>
+</body>
+
+</html>
