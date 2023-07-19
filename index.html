@@ -6,15 +6,24 @@
   <title>Feedback Form</title>
   <style>
     body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-image: url('Output.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* Set the background as fixed */
-    }
-    
+            font-family: Arial, sans-serif;
+            /* Replace the background color with the image URL */
+            background: rgba(0, 0, 0, 0.8) url("Output.jpg") fixed center/cover no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+    header {
+            background-color: #0a4f94;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 28px;
+        }
+
     .basic-info-box {
         max-width: 800px;
         margin: 0 auto;
@@ -28,6 +37,9 @@
         margin: 0 auto;
         padding: 20px;
         background-color: rgba(255, 255, 255, 0.8);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          margin-top: 30px;
     }
 
     .basic-info-box h2,
