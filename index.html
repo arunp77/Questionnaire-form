@@ -116,8 +116,34 @@
     <script>
         document.getElementById("feedbackForm").addEventListener("submit", function (event) {
             event.preventDefault();
-            // Implement your code to handle the form submission here
-            // e.g., sending the feedback to a server, displaying a confirmation message, etc.
+            // Retrieve form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const interviewContent = document.getElementById("interviewContent").value;
+            const technicalSkills = document.getElementById("technicalSkills").value;
+            const communicationPresentation = document.getElementById("communicationPresentation").value;
+            const qualificationsExperience = document.getElementById("qualificationsExperience").value;
+            const overallImpressions = document.getElementById("overallImpressions").value;
+
+            // Here, you can implement your code to send the data to a server or handle it in any other way you prefer.
+            // For this example, we'll log the data to the console.
+            console.log({
+                name,
+                email,
+                phone,
+                interviewContent,
+                technicalSkills,
+                communicationPresentation,
+                qualificationsExperience,
+                overallImpressions
+            });
+
+            // Clear the form after submission
+            document.getElementById("feedbackForm").reset();
+
+            // You can display a confirmation message to the user if needed.
+            alert("Thank you for your feedback!");
         });
     </script>
 </body>
