@@ -6,80 +6,83 @@
   <title>Feedback Form</title>
   <style>
     body {
-            font-family: Arial, sans-serif;
-            /* Replace the background color with the image URL */
-            background: rgba(0, 0, 0, 0.8) url("Output.jpg") fixed center/cover no-repeat;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
-        }
-
-    header {
-            background-color: #0a4f94;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            font-size: 28px;
-        }
-
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('Output.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
     .basic-info-box {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
     }
 
     .interview-questions-box {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 0.8);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          border-radius: 8px;
-          margin-top: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     .basic-info-box h2,
     .interview-questions-box h2 {
-        text-align: center;
-        margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
     }
 
     .basic-info-box form,
     .interview-questions-box form {
-        display: grid;
-        grid-gap: 10px;
+      display: grid;
+      grid-gap: 10px;
     }
 
     .basic-info-box label,
     .interview-questions-box label {
-        font-weight: bold;
+      font-weight: bold;
     }
 
     .basic-info-box textarea,
     .interview-questions-box textarea {
-        width: 100%;
-        height: 150px;
+      width: 100%;
+      height: 150px;
     }
 
     .basic-info-box button,
     .interview-questions-box button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: 120px;
     }
 
     .basic-info-box button:hover,
     .interview-questions-box button:hover {
-        background-color: #0056b3;
-}
+      background-color: #0056b3;
+    }
+
+    /* Add the following CSS for the title */
+    h1 {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+    }
   </style>
 </head>
+
 <body>
     <div class="basic-info-box">
       <h2>Basic Information</h2>
@@ -97,21 +100,35 @@
     </div>
   
     <div class="interview-questions-box">
-      <h2>Interview Questions</h2>
+      <h2>Questionnaire</h2>
       <form action="https://formspree.io/f/xknlgjok" method="POST">
         <label for="interview_content">1. Interview Content:</label>
+        <p>I would like to know if my responses adequately addressed the questions asked during the interview. 
+          Were there any particular areas where my answers could have been more comprehensive or better aligned 
+          with the requirements of the role?</p>
         <textarea name="interview_content" required></textarea>
   
         <label for="technical_skills">2. Technical Skills:</label>
+        <p>Did my technical skills and knowledge meet the expectations for the Risk Data Analyst position? 
+          Were there any specific areas where I could benefit from further development?</p>
         <textarea name="technical_skills" required></textarea>
   
         <label for="communication_presentation">3. Communication and Presentation:</label>
+        <p>I acknowledge that my German language proficiency is currently limited to reading and hearing. 
+          I am actively working on improving my language skills to become more proficient in verbal communication. 
+          However, I would greatly appreciate your insights on other aspects where I might have lacked in the 
+          interview process. Any guidance or feedback you could provide would be of immense help in my journey 
+          of professional growth.</p>
         <textarea name="communication_presentation" required></textarea>
   
         <label for="qualifications_experience">4. Qualifications and Experience:</label>
+        <p>In light of the qualifications and experience required for the position, were there any gaps or areas 
+          where I could enhance my profile to become a stronger candidate?</p>
         <textarea name="qualifications_experience" required></textarea>
   
         <label for="overall_impressions">5. Overall Impressions:</label>
+        <p>Any general observations or insights you have about my interview performance that you believe would be 
+          beneficial for my professional growth would be highly appreciated.</p>
         <textarea name="overall_impressions" required></textarea>
   
         <button type="submit">Submit Feedback</button>
