@@ -7,15 +7,15 @@
     <title>Feedback Response</title>
     <style>
         body {
-                    font-family: Arial, sans-serif;
-                    /* Replace the background color with the image URL */
-                    background: rgba(0, 0, 0, 0.8) url("Output.jpg") fixed center/cover no-repeat;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    margin: 0;
-                    padding: 0;
-                }
+            font-family: Arial, sans-serif;
+            /* Replace the background color with the image URL */
+            background: rgba(0, 0, 0, 0.8) url("Output.jpg") fixed center/cover no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
 
         header {
             background-color: #0a4f94;
@@ -25,7 +25,17 @@
             font-size: 28px;
         }
 
-        section {
+        .personal-info-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f7f7f7; /* Light gray background for personal info section */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .questionnaire-section {
             max-width: 800px;
             margin: 0 auto;
             padding: 30px;
@@ -46,6 +56,8 @@
         }
 
         input[type="text"],
+        input[type="email"],
+        input[type="tel"],
         textarea {
             width: 100%;
             padding: 10px;
@@ -71,31 +83,6 @@
         input[type="submit"]:hover {
             background-color: #007fff;
         }
-
-          /* Style for input boxes */
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  textarea {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    width: 90%;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-
-  /* Style for the submit button */
-  input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
     </style>
 </head>
 
@@ -103,16 +90,24 @@
     <header>
         <h1>Feedback Collection</h1>
     </header>
-    <section class="personal-info">
-        <form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/xknlgjok" method="post">
+
+    <section class="personal-info-section">
+        <h2>Personal Information</h2>
+        <form id="fs-frm-personal-info" name="personal-info-form" accept-charset="utf-8" action="https://formspree.io/f/xknlgjok" method="post">
+            <label for="full-name">Full Name</label>
+            <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+            <label for="email-address">Email Address</label>
+            <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+            <label for="mobile-number">Mobile Number</label>
+            <input type="tel" name="mobile_number" id="mobile-number" placeholder="Enter your mobile number" required="">
+            <input type="submit" value="Next">
+        </form>
+    </section>
+
+    <section class="questionnaire-section">
+        <h2>Questionnaire</h2>
+        <form id="fs-frm-questionnaire" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/xknlgjok" method="post">
             <fieldset id="fs-frm-inputs">
-              <label for="full-name">Full Name</label>
-              <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-              <label for="email-address">Email Address</label>
-              <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-              <label for="mobile-number">Mobile Number</label>
-              <input type="tel" name="mobile_number" id="mobile-number" placeholder="Enter your mobile number" required="">
-              <fieldset id="fs-frm-selects">
                 <label for="timely">1. Interview Content:</label>
                 <input type="text" name="interview_content" id="timely" placeholder="Enter your response here" required="">
                 <label for="quality">2. Technical Skills:</label>
@@ -121,26 +116,26 @@
                 <input type="text" name="communication_presentation" id="communication" placeholder="Enter your response here" required="">
                 <label for="qualifications">4. Qualifications and Experience:</label>
                 <input type="text" name="qualifications_experience" id="qualifications" placeholder="Enter your response here" required="">
-              </fieldset>
-              <label for="message">5. Overall Impressions</label>
-              <textarea rows="3" name="message" id="message" placeholder="Add any other comments here..." required=""></textarea>
-              <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
             </fieldset>
+            <label for="message">5. Overall Impressions</label>
+            <textarea rows="3" name="message" id="message" placeholder="Add any other comments here..." required=""></textarea>
+            <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
             <input type="submit" value="Send Responses">
-          </form>
+        </form>
     </section>
+
     <script>
-        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+        document.getElementById("fs-frm-questionnaire").addEventListener("submit", function (event) {
             event.preventDefault();
             // Retrieve form data
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const interviewContent = document.getElementById("interviewContent").value;
-            const technicalSkills = document.getElementById("technicalSkills").value;
-            const communicationPresentation = document.getElementById("communicationPresentation").value;
-            const qualificationsExperience = document.getElementById("qualificationsExperience").value;
-            const overallImpressions = document.getElementById("overallImpressions").value;
+            const name = document.getElementById("full-name").value;
+            const email = document.getElementById("email-address").value;
+            const phone = document.getElementById("mobile-number").value;
+            const interviewContent = document.getElementById("timely").value;
+            const technicalSkills = document.getElementById("quality").value;
+            const communicationPresentation = document.getElementById("communication").value;
+            const qualificationsExperience = document.getElementById("qualifications").value;
+            const overallImpressions = document.getElementById("message").value;
 
             // Here, you can implement your code to send the data to a server or handle it in any other way you prefer.
             // For this example, we'll log the data to the console.
@@ -156,7 +151,7 @@
             });
 
             // Clear the form after submission
-            document.getElementById("feedbackForm").reset();
+            document.getElementById("fs-frm-questionnaire").reset();
 
             // You can display a confirmation message to the user if needed.
             alert("Thank you for your feedback!");
