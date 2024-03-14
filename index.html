@@ -159,6 +159,18 @@
         <button type="submit">Submit Feedback</button>
       </form>
     </div>
+  <script>
+  document.getElementById("basic-info-form").addEventListener("submit", function(event) {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    
+    // Check if name and email are filled
+    if (name.trim() === '' || email.trim() === '') {
+      alert("Please fill in both Name and Email fields before submitting the form.");
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
   </main>
   <footer>
       <p>&copy; 2023 Arun Kumar Pandey. All rights reserved.</p>
