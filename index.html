@@ -111,7 +111,7 @@
     </header>
     <div class="basic-info-box">
       <h2>Basic Information</h2>
-      <form action="https://formspree.io/f/xknlgjok" method="POST">
+      <form id="feedback-form" action="https://formspree.io/f/xknlgjok" method="POST">
         <label for="name">Name <span>*</span>:</label>
         <input type="text" id="name" name="name" required>
   
@@ -126,7 +126,7 @@
   
     <div class="interview-questions-box">
       <h2>Questionnaire</h2>
-      <form id="feedback-form" action="https://formspree.io/f/xknlgjok" method="POST">
+      <form action="https://formspree.io/f/xknlgjok" method="POST">
         <label for="interview_content">1. Interview Content:</label>
         <p>I would like to know if my responses adequately addressed the questions asked during the interview. 
           Were there any particular areas where my answers could have been more comprehensive or better aligned 
@@ -160,7 +160,7 @@
       </form>
     </div>
   <script>
-  document.getElementById("feedback-form"").addEventListener("submit", function(event) {
+  document.getElementById("feedback-form").addEventListener("submit", function(event) {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     
