@@ -15,10 +15,9 @@
       background-attachment: fixed;
     }
 
-    /* Set the maximum width for the main content area */
     main {
-      margin: 0 auto; /* Center the content horizontally within the main area */
-      padding: 20px; /* Optional padding to create spacing between content and edges */
+      margin: 0 auto;
+      padding: 20px;
     }
     
     header {
@@ -30,7 +29,7 @@
       margin-bottom: 20px;  
     }
 
-    .basic-info-box {
+    .basic-info-box, .interview-questions-box {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
@@ -38,53 +37,39 @@
       margin-bottom: 20px;
     }
 
-    .interview-questions-box {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 60px; /* Adjust this value to set the space between the form and footer */
-    }
-
-    .basic-info-box h2,
-    .interview-questions-box h2 {
+    .basic-info-box h2, .interview-questions-box h2 {
       text-align: center;
       margin-bottom: 20px;
       color: #0e7d8b;
       padding: 10px;
-      font-size: 30px
+      font-size: 30px;
     }
 
-    .basic-info-box form,
-    .interview-questions-box form {
+    .basic-info-box form, .interview-questions-box form {
       display: grid;
       grid-gap: 10px;
     }
 
-    .basic-info-box label,
-    .interview-questions-box label {
+    .basic-info-box label, .interview-questions-box label {
       font-weight: bold;
     }
 
-    .basic-info-box textarea,
-    .interview-questions-box textarea {
+    .basic-info-box textarea, .interview-questions-box textarea {
       width: 100%;
       height: 150px;
     }
 
-    .basic-info-box button,
-    .interview-questions-box button {
+    .basic-info-box button, .interview-questions-box button {
       padding: 10px 20px;
       background-color: #0cabdc;
       color: #fff;
       border: none;
       cursor: pointer;
       width: 200px;
-      font-size: 18px
+      font-size: 18px;
     }
 
-    .basic-info-box button:hover,
-    .interview-questions-box button:hover {
+    .basic-info-box button:hover, .interview-questions-box button:hover {
       background-color: #0056b3;
     }
 
@@ -99,81 +84,71 @@
       font-weight: bold;
     }
 
-      footer p {
-          margin: 0;
-      }
+    footer p {
+      margin: 0;
+    }
   </style>
 </head>
+<body>
 
 <main>
-    <header>
-      <h1>Feedback Form</h1>
-    </header>
-    <div class="basic-info-box">
-      <h2>Basic Information</h2>
-      <form id="feedback-form" action="https://formspree.io/f/xknlgjok" method="POST">
-        <label for="name" class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Full Name <span>*</span>:</label>
-        <input type="text" id="name" name="name" placeholder="First and Last" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-  
-        <label for="email" class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Email Address <span>*</span>:</label>
-        <input type="email" id="email" name="email" placeholder="you@company.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-  
-        <label for="phone" class="text-sm mb-2 font-medium text-gray-600 dark:text-gray-400">Mobile Number:</label>
-        <input type="text" name="phone" id="phone" placeholder="Enter your mobile number" />
-  
-      </form>
-    </div>
-  
-    <div class="interview-questions-box">
-      <h2>Questionnaire</h2>
-      <form action="https://formspree.io/f/xknlgjok" method="POST">
-        <label for="interview_content">1. Interview Content:</label>
-        <p>I would like to know if my responses adequately addressed the questions asked during the interview. 
-          Were there any particular areas where my answers could have been more comprehensive or better aligned 
-          with the requirements of the role?</p>
-        <textarea name="interview_content" placeholder="Your Message" required></textarea>
-  
-        <label for="technical_skills">2. Technical Skills:</label>
-        <p>Did my technical skills and knowledge meet the expectations for the position? 
-          Were there any specific areas where I could benefit from further development?</p>
-        <textarea name="technical_skills" placeholder="Your Message" required></textarea>
-  
-        <label for="communication_presentation">3. Communication and Presentation:</label>
-        <p>I acknowledge that my (#skills) is currently has some limitation. 
-          I am actively working on improving those skills to become more proficient. 
-          However, I would greatly appreciate your insights on other aspects where I might have lacked in the 
-          interview process. Any guidance or feedback you could provide would be of immense help in my journey 
-          of professional growth.</p>
-        <textarea name="communication_presentation" placeholder="Your Message" required></textarea>
-  
-        <label for="qualifications_experience">4. Qualifications and Experience:</label>
-        <p>In light of the qualifications and experience required for the position, were there any gaps or areas 
-          where I could enhance my profile to become a stronger candidate?</p>
-        <textarea name="qualifications_experience" placeholder="Your Message" required></textarea>
-  
-        <label for="overall_impressions">5. Overall Impressions:</label>
-        <p>Any general observations or insights you have about my interview performance that you believe would be 
-          beneficial for my professional growth would be highly appreciated.</p>
-        <textarea name="overall_impressions" placeholder="Your Message" required></textarea>
-  
-        <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none">Submit Feedback</button>
-      </form>
-    </div>
-  <script>
-  document.getElementById("feedback-form").addEventListener("submit", function(event) {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    
-    // Check if name and email are filled
-    if (name.trim() === '' || email.trim() === '') {
+  <header>
+    <h1>Feedback Form</h1>
+  </header>
+
+  <div class="basic-info-box">
+    <h2>Basic Information</h2>
+    <form id="feedback-form" action="https://formspree.io/f/xknlgjok" method="POST">
+      <label for="name">Full Name <span>*</span>:</label>
+      <input type="text" id="name" name="name" placeholder="First and Last" required />
+
+      <label for="email">Email Address <span>*</span>:</label>
+      <input type="email" id="email" name="email" placeholder="you@company.com" required />
+
+      <label for="phone">Mobile Number:</label>
+      <input type="text" name="phone" id="phone" placeholder="Enter your mobile number" />
+    </form>
+  </div>
+
+  <div class="interview-questions-box">
+    <h2>Questionnaire</h2>
+    <form action="https://formspree.io/f/xknlgjok" method="POST" onsubmit="return validateForm()">
+      <label for="interview_content">1. Interview Content:</label>
+      <textarea name="interview_content" placeholder="Your Message" required></textarea>
+
+      <label for="technical_skills">2. Technical Skills:</label>
+      <textarea name="technical_skills" placeholder="Your Message" required></textarea>
+
+      <label for="communication_presentation">3. Communication and Presentation:</label>
+      <textarea name="communication_presentation" placeholder="Your Message" required></textarea>
+
+      <label for="qualifications_experience">4. Qualifications and Experience:</label>
+      <textarea name="qualifications_experience" placeholder="Your Message" required></textarea>
+
+      <label for="overall_impressions">5. Overall Impressions:</label>
+      <textarea name="overall_impressions" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2023 Arun Kumar Pandey. All rights reserved.</p>
+</footer>
+
+<script>
+  function validateForm() {
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+
+    if (name === '' || email === '') {
       alert("Please fill in both Name and Email fields before submitting the form.");
-      event.preventDefault(); // Prevent form submission
+      return false; // Prevent form submission
     }
-  });
+    return true; // Allow form submission
+  }
 </script>
-  </main>
-  <footer>
-      <p>&copy; 2023 Arun Kumar Pandey. All rights reserved.</p>
-  </footer>
-  
-  </html>
+
+</body>
+</html>
